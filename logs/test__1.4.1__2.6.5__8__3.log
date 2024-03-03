@@ -1,0 +1,613 @@
+log4j:WARN No appenders could be found for logger (org.apache.hadoop.metrics2.lib.MutableMetricsFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+24/02/04 16:07:30 INFO SecurityManager: Changing view acls to: gmanche
+24/02/04 16:07:30 INFO SecurityManager: Changing modify acls to: gmanche
+24/02/04 16:07:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(gmanche); users with modify permissions: Set(gmanche)
+24/02/04 16:07:30 INFO HttpServer: Starting HTTP Server
+24/02/04 16:07:30 INFO Utils: Successfully started service 'HTTP class server' on port 40365.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 1.4.1
+      /_/
+
+Using Scala version 2.10.4 (OpenJDK 64-Bit Server VM, Java 1.8.0_402)
+Type in expressions to have them evaluated.
+Type :help for more information.
+24/02/04 16:07:33 WARN Utils: Your hostname, DESKTOP-ENDFM1D resolves to a loopback address: 127.0.1.1; using 172.26.95.204 instead (on interface eth0)
+24/02/04 16:07:33 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+24/02/04 16:07:33 INFO SparkContext: Running Spark version 1.4.1
+24/02/04 16:07:33 INFO SecurityManager: Changing view acls to: gmanche
+24/02/04 16:07:33 INFO SecurityManager: Changing modify acls to: gmanche
+24/02/04 16:07:33 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(gmanche); users with modify permissions: Set(gmanche)
+24/02/04 16:07:33 INFO Slf4jLogger: Slf4jLogger started
+24/02/04 16:07:33 INFO Remoting: Starting remoting
+24/02/04 16:07:33 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@172.26.95.204:39035]
+24/02/04 16:07:33 INFO Utils: Successfully started service 'sparkDriver' on port 39035.
+24/02/04 16:07:33 INFO SparkEnv: Registering MapOutputTracker
+24/02/04 16:07:33 INFO SparkEnv: Registering BlockManagerMaster
+24/02/04 16:07:33 INFO DiskBlockManager: Created local directory at /tmp/spark-66a1c0d8-ec79-4417-bcf3-60042952ec47/blockmgr-9b3ca620-589a-41fd-9197-22c3cd71df14
+24/02/04 16:07:33 INFO MemoryStore: MemoryStore started with capacity 265.1 MB
+24/02/04 16:07:33 INFO HttpFileServer: HTTP File server directory is /tmp/spark-66a1c0d8-ec79-4417-bcf3-60042952ec47/httpd-fb7691a5-da95-4f56-9cc3-c5bea823952e
+24/02/04 16:07:33 INFO HttpServer: Starting HTTP Server
+24/02/04 16:07:33 INFO Utils: Successfully started service 'HTTP file server' on port 44913.
+24/02/04 16:07:33 INFO SparkEnv: Registering OutputCommitCoordinator
+24/02/04 16:07:34 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+24/02/04 16:07:34 INFO SparkUI: Started SparkUI at http://172.26.95.204:4040
+24/02/04 16:07:34 INFO Executor: Starting executor ID driver on host localhost
+24/02/04 16:07:34 INFO Executor: Using REPL class URI: http://172.26.95.204:40365
+24/02/04 16:07:34 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45043.
+24/02/04 16:07:34 INFO NettyBlockTransferService: Server created on 45043
+24/02/04 16:07:34 INFO BlockManagerMaster: Trying to register BlockManager
+24/02/04 16:07:34 INFO BlockManagerMasterEndpoint: Registering block manager localhost:45043 with 265.1 MB RAM, BlockManagerId(driver, localhost, 45043)
+24/02/04 16:07:34 INFO BlockManagerMaster: Registered BlockManager
+24/02/04 16:07:34 INFO SparkILoop: Created spark context..
+Spark context available as sc.
+24/02/04 16:07:34 INFO HiveContext: Initializing execution hive, version 0.13.1
+24/02/04 16:07:35 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+24/02/04 16:07:35 INFO ObjectStore: ObjectStore, initialize called
+24/02/04 16:07:35 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+24/02/04 16:07:35 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+24/02/04 16:07:35 WARN Connection: BoneCP specified but not present in CLASSPATH (or one of dependencies)
+24/02/04 16:07:35 WARN Connection: BoneCP specified but not present in CLASSPATH (or one of dependencies)
+24/02/04 16:07:36 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+24/02/04 16:07:36 INFO MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: Lexical error at line 1, column 5.  Encountered: "@" (64), after : "".
+24/02/04 16:07:37 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+24/02/04 16:07:37 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+24/02/04 16:07:37 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+24/02/04 16:07:37 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+24/02/04 16:07:38 INFO ObjectStore: Initialized ObjectStore
+24/02/04 16:07:38 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 0.13.1aa
+24/02/04 16:07:38 INFO HiveMetaStore: Added admin role in metastore
+24/02/04 16:07:38 INFO HiveMetaStore: Added public role in metastore
+24/02/04 16:07:38 INFO HiveMetaStore: No user is added in admin role, since config is empty
+24/02/04 16:07:38 INFO SessionState: No Tez session required at this point. hive.execution.engine=mr.
+24/02/04 16:07:38 INFO SparkILoop: Created sql context (with Hive support)..
+SQL context available as sqlContext.
+
+scala> import org.apache.spark.sql._
+import org.apache.spark.sql._
+
+scala> import org.apache.spark.sql.types._
+import org.apache.spark.sql.types._
+
+scala> 
+
+scala> val sparkVersion = sc.version
+sparkVersion: String = 1.4.1
+
+scala> 
+
+scala> val testId = sc.getConf.get("spark.args.testId")
+testId: String = test__1.4.1__2.6.5__8__3
+
+scala> 
+
+scala> sqlContext.sql("SET spark.sql.parquet.compression.codec=uncompressed")
+24/02/04 16:07:40 INFO HiveContext: Initializing HiveMetastoreConnection version 0.13.1 using Spark classes.
+24/02/04 16:07:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/02/04 16:07:41 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+24/02/04 16:07:41 INFO ObjectStore: ObjectStore, initialize called
+24/02/04 16:07:41 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+24/02/04 16:07:41 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+24/02/04 16:07:41 WARN Connection: BoneCP specified but not present in CLASSPATH (or one of dependencies)
+24/02/04 16:07:41 WARN Connection: BoneCP specified but not present in CLASSPATH (or one of dependencies)
+24/02/04 16:07:42 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+24/02/04 16:07:42 INFO MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: Lexical error at line 1, column 5.  Encountered: "@" (64), after : "".
+24/02/04 16:07:42 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+24/02/04 16:07:42 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+24/02/04 16:07:43 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+24/02/04 16:07:43 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+24/02/04 16:07:43 INFO Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+24/02/04 16:07:43 INFO ObjectStore: Initialized ObjectStore
+24/02/04 16:07:43 INFO HiveMetaStore: Added admin role in metastore
+24/02/04 16:07:43 INFO HiveMetaStore: Added public role in metastore
+24/02/04 16:07:43 INFO HiveMetaStore: No user is added in admin role, since config is empty
+24/02/04 16:07:43 INFO SessionState: No Tez session required at this point. hive.execution.engine=mr.
+res0: org.apache.spark.sql.DataFrame = [: string]
+
+scala> 
+
+scala> val data = Seq(
+     |     Row("1", "0000-01-01"),
+     |     Row("2", "0050-01-01"),
+     |     Row("3", "0999-12-31"),
+     |     Row("4", "1000-01-01"),
+     |     Row("5", "1592-10-14"),
+     |     Row("6", "1592-10-15"),
+     |     Row("7", "1899-12-31"),
+     |     Row("8", "1900-01-01"),
+     |     Row("9", "9999-12-31")
+     | )
+data: Seq[org.apache.spark.sql.Row] = List([1,0000-01-01], [2,0050-01-01], [3,0999-12-31], [4,1000-01-01], [5,1592-10-14], [6,1592-10-15], [7,1899-12-31], [8,1900-01-01], [9,9999-12-31])
+
+scala> 
+
+scala> val rdd = sc.parallelize(data)
+rdd: org.apache.spark.rdd.RDD[org.apache.spark.sql.Row] = ParallelCollectionRDD[1] at parallelize at <console>:29
+
+scala> 
+
+scala> val schema = new StructType(Array(StructField("id", StringType), StructField("date", StringType)))
+schema: org.apache.spark.sql.types.StructType = StructType(StructField(id,StringType,true), StructField(date,StringType,true))
+
+scala> 
+
+scala> var dfw = sqlContext.createDataFrame(rdd, schema)
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string]
+
+scala> dfw.registerTempTable("dfw")
+
+scala> dfw = sqlContext.sql("SELECT id, date, CAST(date AS DATE) AS dt, CAST(CONCAT(date, ' 00:00:00') AS TIMESTAMP) AS ts, NAMED_STRUCT('dt', CAST(date AS DATE), 'ts', CAST(CONCAT(date, ' 00:00:00') AS TIMESTAMP)) AS nested FROM dfw")
+24/02/04 16:07:45 INFO ParseDriver: Parsing command: SELECT id, date, CAST(date AS DATE) AS dt, CAST(CONCAT(date, ' 00:00:00') AS TIMESTAMP) AS ts, NAMED_STRUCT('dt', CAST(date AS DATE), 'ts', CAST(CONCAT(date, ' 00:00:00') AS TIMESTAMP)) AS nested FROM dfw
+24/02/04 16:07:45 INFO ParseDriver: Parse Completed
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>]
+
+scala> 
+
+scala> dfw = dfw.withColumn("ctxSparkVersion", lit(sparkVersion))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string]
+
+scala> dfw = dfw.withColumn("argSparkVersion", lit(sc.getConf.get("spark.args.sparkVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string, argSparkVersion: string]
+
+scala> dfw = dfw.withColumn("argHadoopVersion", lit(sc.getConf.get("spark.args.hadoopVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string, argSparkVersion: string, argHadoopVersion: string]
+
+scala> dfw = dfw.withColumn("argTwitterParquetCommonVersion", lit(sc.getConf.get("spark.args.twitterParquetCommonVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string, argSparkVersion: string, argHadoopVersion: string, argTwitterParquetCommonVersion: string]
+
+scala> dfw = dfw.withColumn("argTwitterParquetFormatVersion", lit(sc.getConf.get("spark.args.twitterParquetFormatVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string, argSparkVersion: string, argHadoopVersion: string, argTwitterParquetCommonVersion: string, argTwitterParquetFormatVersion: string]
+
+scala> dfw = dfw.withColumn("argTwitterParquetThriftVersion", lit(sc.getConf.get("spark.args.twitterParquetThriftVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string, argSparkVersion: string, argHadoopVersion: string, argTwitterParquetCommonVersion: string, argTwitterParquetFormatVersion: string, argTwitterParquetThriftVersion: string]
+
+scala> dfw = dfw.withColumn("argApacheParquetCommonVersion", lit(sc.getConf.get("spark.args.apacheParquetCommonVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string, argSparkVersion: string, argHadoopVersion: string, argTwitterParquetCommonVersion: string, argTwitterParquetFormatVersion: string, argTwitterParquetThriftVersion: string, argApacheParquetCommonVersion: string]
+
+scala> dfw = dfw.withColumn("argApacheParquetFormatVersion", lit(sc.getConf.get("spark.args.apacheParquetFormatVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string, argSparkVersion: string, argHadoopVersion: string, argTwitterParquetCommonVersion: string, argTwitterParquetFormatVersion: string, argTwitterParquetThriftVersion: string, argApacheParquetCommonVersion: string, argApacheParquetFormatVersion: string]
+
+scala> dfw = dfw.withColumn("argApacheParquetThriftVersion", lit(sc.getConf.get("spark.args.apacheParquetThriftVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string, argSparkVersion: string, argHadoopVersion: string, argTwitterParquetCommonVersion: string, argTwitterParquetFormatVersion: string, argTwitterParquetThriftVersion: string, argApacheParquetCommonVersion: string, argApacheParquetFormatVersion: string, argApacheParquetThriftVersion: string]
+
+scala> 
+
+scala> dfw.printSchema()
+root
+ |-- id: string (nullable = true)
+ |-- date: string (nullable = true)
+ |-- dt: date (nullable = true)
+ |-- ts: timestamp (nullable = true)
+ |-- nested: struct (nullable = true)
+ |    |-- dt: date (nullable = true)
+ |    |-- ts: timestamp (nullable = true)
+ |-- ctxSparkVersion: string (nullable = false)
+ |-- argSparkVersion: string (nullable = false)
+ |-- argHadoopVersion: string (nullable = false)
+ |-- argTwitterParquetCommonVersion: string (nullable = false)
+ |-- argTwitterParquetFormatVersion: string (nullable = false)
+ |-- argTwitterParquetThriftVersion: string (nullable = false)
+ |-- argApacheParquetCommonVersion: string (nullable = false)
+ |-- argApacheParquetFormatVersion: string (nullable = false)
+ |-- argApacheParquetThriftVersion: string (nullable = false)
+
+
+scala> dfw.show()
+24/02/04 16:07:47 INFO SparkContext: Starting job: show at <console>:36
+24/02/04 16:07:47 INFO DAGScheduler: Got job 0 (show at <console>:36) with 1 output partitions (allowLocal=false)
+24/02/04 16:07:47 INFO DAGScheduler: Final stage: ResultStage 0(show at <console>:36)
+24/02/04 16:07:47 INFO DAGScheduler: Parents of final stage: List()
+24/02/04 16:07:47 INFO DAGScheduler: Missing parents: List()
+24/02/04 16:07:47 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[4] at show at <console>:36), which has no missing parents
+24/02/04 16:07:47 INFO MemoryStore: ensureFreeSpace(6584) called with curMem=0, maxMem=278019440
+24/02/04 16:07:47 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 6.4 KB, free 265.1 MB)
+24/02/04 16:07:47 INFO MemoryStore: ensureFreeSpace(3136) called with curMem=6584, maxMem=278019440
+24/02/04 16:07:47 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 3.1 KB, free 265.1 MB)
+24/02/04 16:07:47 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:45043 (size: 3.1 KB, free: 265.1 MB)
+24/02/04 16:07:47 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:874
+24/02/04 16:07:47 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[4] at show at <console>:36)
+24/02/04 16:07:47 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/02/04 16:07:47 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 81 ms on localhost (1/1)
+24/02/04 16:07:47 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+24/02/04 16:07:47 INFO DAGScheduler: ResultStage 0 (show at <console>:36) finished in 0.092 s
+24/02/04 16:07:47 INFO DAGScheduler: Job 0 finished: show at <console>:36, took 0.206721 s
+24/02/04 16:07:47 INFO SparkContext: Starting job: show at <console>:36
+24/02/04 16:07:47 INFO DAGScheduler: Got job 1 (show at <console>:36) with 19 output partitions (allowLocal=false)
+24/02/04 16:07:47 INFO DAGScheduler: Final stage: ResultStage 1(show at <console>:36)
+24/02/04 16:07:47 INFO DAGScheduler: Parents of final stage: List()
+24/02/04 16:07:47 INFO DAGScheduler: Missing parents: List()
+24/02/04 16:07:47 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[4] at show at <console>:36), which has no missing parents
+24/02/04 16:07:47 INFO MemoryStore: ensureFreeSpace(6584) called with curMem=9720, maxMem=278019440
+24/02/04 16:07:47 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 6.4 KB, free 265.1 MB)
+24/02/04 16:07:47 INFO MemoryStore: ensureFreeSpace(3136) called with curMem=16304, maxMem=278019440
+24/02/04 16:07:47 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.1 KB, free 265.1 MB)
+24/02/04 16:07:47 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:45043 (size: 3.1 KB, free: 265.1 MB)
+24/02/04 16:07:47 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:874
+24/02/04 16:07:47 INFO DAGScheduler: Submitting 19 missing tasks from ResultStage 1 (MapPartitionsRDD[4] at show at <console>:36)
+24/02/04 16:07:47 INFO TaskSchedulerImpl: Adding task set 1.0 with 19 tasks
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 1519 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 4, localhost, PROCESS_LOCAL, 1519 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 5, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 6, localhost, PROCESS_LOCAL, 1519 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 7, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 8, localhost, PROCESS_LOCAL, 1519 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 9, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 10, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 11, localhost, PROCESS_LOCAL, 1519 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 12, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 12.0 in stage 1.0 (TID 13, localhost, PROCESS_LOCAL, 1519 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 13.0 in stage 1.0 (TID 14, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 14.0 in stage 1.0 (TID 15, localhost, PROCESS_LOCAL, 1519 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 15.0 in stage 1.0 (TID 16, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 16.0 in stage 1.0 (TID 17, localhost, PROCESS_LOCAL, 1519 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 17.0 in stage 1.0 (TID 18, localhost, PROCESS_LOCAL, 1379 bytes)
+24/02/04 16:07:47 INFO TaskSetManager: Starting task 18.0 in stage 1.0 (TID 19, localhost, PROCESS_LOCAL, 1519 bytes)
+24/02/04 16:07:47 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+24/02/04 16:07:47 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+24/02/04 16:07:47 INFO Executor: Running task 3.0 in stage 1.0 (TID 4)
+24/02/04 16:07:47 INFO Executor: Running task 2.0 in stage 1.0 (TID 3)
+24/02/04 16:07:47 INFO Executor: Running task 4.0 in stage 1.0 (TID 5)
+24/02/04 16:07:47 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Running task 5.0 in stage 1.0 (TID 6)
+24/02/04 16:07:47 INFO Executor: Running task 6.0 in stage 1.0 (TID 7)
+24/02/04 16:07:47 INFO Executor: Running task 7.0 in stage 1.0 (TID 8)
+24/02/04 16:07:47 INFO Executor: Running task 8.0 in stage 1.0 (TID 9)
+24/02/04 16:07:47 INFO Executor: Running task 9.0 in stage 1.0 (TID 10)
+24/02/04 16:07:47 INFO Executor: Finished task 4.0 in stage 1.0 (TID 5). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Running task 13.0 in stage 1.0 (TID 14)
+24/02/04 16:07:47 INFO Executor: Running task 12.0 in stage 1.0 (TID 13)
+24/02/04 16:07:47 INFO Executor: Finished task 13.0 in stage 1.0 (TID 14). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Running task 15.0 in stage 1.0 (TID 16)
+24/02/04 16:07:47 INFO Executor: Finished task 6.0 in stage 1.0 (TID 7). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Running task 16.0 in stage 1.0 (TID 17)
+24/02/04 16:07:47 INFO Executor: Running task 17.0 in stage 1.0 (TID 18)
+24/02/04 16:07:47 INFO Executor: Running task 10.0 in stage 1.0 (TID 11)
+24/02/04 16:07:47 INFO Executor: Running task 11.0 in stage 1.0 (TID 12)
+24/02/04 16:07:47 INFO Executor: Running task 14.0 in stage 1.0 (TID 15)
+24/02/04 16:07:47 INFO Executor: Finished task 15.0 in stage 1.0 (TID 16). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Finished task 7.0 in stage 1.0 (TID 8). 1279 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Finished task 1.0 in stage 1.0 (TID 2). 1279 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Finished task 3.0 in stage 1.0 (TID 4). 1279 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Finished task 17.0 in stage 1.0 (TID 18). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Running task 18.0 in stage 1.0 (TID 19)
+24/02/04 16:07:47 INFO Executor: Finished task 5.0 in stage 1.0 (TID 6). 1279 bytes result sent to driver
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 53 ms on localhost (1/19)
+24/02/04 16:07:47 INFO Executor: Finished task 12.0 in stage 1.0 (TID 13). 1279 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Finished task 14.0 in stage 1.0 (TID 15). 1279 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Finished task 9.0 in stage 1.0 (TID 10). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Finished task 8.0 in stage 1.0 (TID 9). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Finished task 2.0 in stage 1.0 (TID 3). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO Executor: Finished task 16.0 in stage 1.0 (TID 17). 1279 bytes result sent to driver
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 5) in 60 ms on localhost (2/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 15.0 in stage 1.0 (TID 16) in 64 ms on localhost (3/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 7.0 in stage 1.0 (TID 8) in 67 ms on localhost (4/19)
+24/02/04 16:07:47 INFO Executor: Finished task 11.0 in stage 1.0 (TID 12). 628 bytes result sent to driver
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 4) in 73 ms on localhost (5/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 17.0 in stage 1.0 (TID 18) in 64 ms on localhost (6/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 7) in 68 ms on localhost (7/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 12.0 in stage 1.0 (TID 13) in 68 ms on localhost (8/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 13.0 in stage 1.0 (TID 14) in 68 ms on localhost (9/19)
+24/02/04 16:07:47 INFO Executor: Finished task 18.0 in stage 1.0 (TID 19). 1279 bytes result sent to driver
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 2) in 78 ms on localhost (10/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 14.0 in stage 1.0 (TID 15) in 70 ms on localhost (11/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 6) in 74 ms on localhost (12/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 9.0 in stage 1.0 (TID 10) in 73 ms on localhost (13/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 8.0 in stage 1.0 (TID 9) in 73 ms on localhost (14/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 3) in 80 ms on localhost (15/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 16.0 in stage 1.0 (TID 17) in 72 ms on localhost (16/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 11.0 in stage 1.0 (TID 12) in 74 ms on localhost (17/19)
+24/02/04 16:07:47 INFO Executor: Finished task 10.0 in stage 1.0 (TID 11). 1279 bytes result sent to driver
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 18.0 in stage 1.0 (TID 19) in 71 ms on localhost (18/19)
+24/02/04 16:07:47 INFO TaskSetManager: Finished task 10.0 in stage 1.0 (TID 11) in 75 ms on localhost (19/19)
+24/02/04 16:07:47 INFO DAGScheduler: ResultStage 1 (show at <console>:36) finished in 0.083 s
+24/02/04 16:07:47 INFO DAGScheduler: Job 1 finished: show at <console>:36, took 0.100800 s
+24/02/04 16:07:47 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
++--+----------+----------+--------------------+--------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+
+|id|      date|        dt|                  ts|              nested|ctxSparkVersion|argSparkVersion|argHadoopVersion|argTwitterParquetCommonVersion|argTwitterParquetFormatVersion|argTwitterParquetThriftVersion|argApacheParquetCommonVersion|argApacheParquetFormatVersion|argApacheParquetThriftVersion|
++--+----------+----------+--------------------+--------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+
+| 1|0000-01-01|0001-01-01|0001-01-01 00:00:...|[0001-01-01,0001-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |
+| 2|0050-01-01|0050-01-01|0050-01-01 00:00:...|[0050-01-01,0050-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |
+| 3|0999-12-31|0999-12-31|0999-12-31 00:00:...|[0999-12-31,0999-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |
+| 4|1000-01-01|1000-01-01|1000-01-01 00:00:...|[1000-01-01,1000-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |
+| 5|1592-10-14|1592-10-14|1592-10-14 00:00:...|[1592-10-14,1592-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |
+| 6|1592-10-15|1592-10-15|1592-10-15 00:00:...|[1592-10-15,1592-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |
+| 7|1899-12-31|1899-12-31|1899-12-31 00:00:...|[1899-12-31,1899-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |
+| 8|1900-01-01|1900-01-01|1900-01-01 00:00:...|[1900-01-02,1900-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |
+| 9|9999-12-31|9999-12-31|9999-12-31 00:00:...|[9999-12-31,9999-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |
++--+----------+----------+--------------------+--------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+
+
+
+scala> 
+
+scala> val loc = s"/home/gmanche/data/testId=${testId}"
+loc: String = /home/gmanche/data/testId=test__1.4.1__2.6.5__8__3
+
+scala> 
+
+scala> dfw.repartition(1).write.format("parquet").mode("overwrite").save(loc)
+24/02/04 16:07:48 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+24/02/04 16:07:48 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+24/02/04 16:07:48 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+24/02/04 16:07:48 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+24/02/04 16:07:48 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+24/02/04 16:07:48 INFO ParquetRelation2: Using default output committer for Parquet: parquet.hadoop.ParquetOutputCommitter
+24/02/04 16:07:48 INFO DefaultWriterContainer: Using user defined output committer class parquet.hadoop.ParquetOutputCommitter
+24/02/04 16:07:48 INFO SparkContext: Starting job: save at <console>:40
+24/02/04 16:07:48 INFO DAGScheduler: Registering RDD 7 (save at <console>:40)
+24/02/04 16:07:48 INFO DAGScheduler: Got job 2 (save at <console>:40) with 1 output partitions (allowLocal=false)
+24/02/04 16:07:48 INFO DAGScheduler: Final stage: ResultStage 3(save at <console>:40)
+24/02/04 16:07:48 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+24/02/04 16:07:48 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 2)
+24/02/04 16:07:48 INFO DAGScheduler: Submitting ShuffleMapStage 2 (MapPartitionsRDD[7] at save at <console>:40), which has no missing parents
+24/02/04 16:07:48 INFO MemoryStore: ensureFreeSpace(7416) called with curMem=19440, maxMem=278019440
+24/02/04 16:07:48 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 7.2 KB, free 265.1 MB)
+24/02/04 16:07:48 INFO MemoryStore: ensureFreeSpace(3537) called with curMem=26856, maxMem=278019440
+24/02/04 16:07:48 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.5 KB, free 265.1 MB)
+24/02/04 16:07:48 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:45043 (size: 3.5 KB, free: 265.1 MB)
+24/02/04 16:07:48 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:874
+24/02/04 16:07:48 INFO DAGScheduler: Submitting 20 missing tasks from ShuffleMapStage 2 (MapPartitionsRDD[7] at save at <console>:40)
+24/02/04 16:07:48 INFO TaskSchedulerImpl: Adding task set 2.0 with 20 tasks
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 20, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 21, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 22, localhost, PROCESS_LOCAL, 1508 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 3.0 in stage 2.0 (TID 23, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 4.0 in stage 2.0 (TID 24, localhost, PROCESS_LOCAL, 1508 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 5.0 in stage 2.0 (TID 25, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 6.0 in stage 2.0 (TID 26, localhost, PROCESS_LOCAL, 1508 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 7.0 in stage 2.0 (TID 27, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 8.0 in stage 2.0 (TID 28, localhost, PROCESS_LOCAL, 1508 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 9.0 in stage 2.0 (TID 29, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 10.0 in stage 2.0 (TID 30, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 11.0 in stage 2.0 (TID 31, localhost, PROCESS_LOCAL, 1508 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 12.0 in stage 2.0 (TID 32, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 13.0 in stage 2.0 (TID 33, localhost, PROCESS_LOCAL, 1508 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 14.0 in stage 2.0 (TID 34, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 15.0 in stage 2.0 (TID 35, localhost, PROCESS_LOCAL, 1508 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 16.0 in stage 2.0 (TID 36, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 17.0 in stage 2.0 (TID 37, localhost, PROCESS_LOCAL, 1508 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 18.0 in stage 2.0 (TID 38, localhost, PROCESS_LOCAL, 1368 bytes)
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 19.0 in stage 2.0 (TID 39, localhost, PROCESS_LOCAL, 1508 bytes)
+24/02/04 16:07:48 INFO Executor: Running task 2.0 in stage 2.0 (TID 22)
+24/02/04 16:07:48 INFO Executor: Running task 1.0 in stage 2.0 (TID 21)
+24/02/04 16:07:48 INFO Executor: Running task 4.0 in stage 2.0 (TID 24)
+24/02/04 16:07:48 INFO Executor: Running task 3.0 in stage 2.0 (TID 23)
+24/02/04 16:07:48 INFO Executor: Running task 6.0 in stage 2.0 (TID 26)
+24/02/04 16:07:48 INFO Executor: Running task 9.0 in stage 2.0 (TID 29)
+24/02/04 16:07:48 INFO Executor: Running task 0.0 in stage 2.0 (TID 20)
+24/02/04 16:07:48 INFO Executor: Running task 10.0 in stage 2.0 (TID 30)
+24/02/04 16:07:48 INFO Executor: Running task 12.0 in stage 2.0 (TID 32)
+24/02/04 16:07:48 INFO Executor: Running task 14.0 in stage 2.0 (TID 34)
+24/02/04 16:07:48 INFO Executor: Running task 8.0 in stage 2.0 (TID 28)
+24/02/04 16:07:48 INFO Executor: Running task 11.0 in stage 2.0 (TID 31)
+24/02/04 16:07:48 INFO Executor: Running task 5.0 in stage 2.0 (TID 25)
+24/02/04 16:07:48 INFO Executor: Running task 13.0 in stage 2.0 (TID 33)
+24/02/04 16:07:48 INFO Executor: Running task 15.0 in stage 2.0 (TID 35)
+24/02/04 16:07:48 INFO Executor: Running task 7.0 in stage 2.0 (TID 27)
+24/02/04 16:07:48 INFO Executor: Running task 16.0 in stage 2.0 (TID 36)
+24/02/04 16:07:48 INFO Executor: Running task 17.0 in stage 2.0 (TID 37)
+24/02/04 16:07:48 INFO Executor: Running task 18.0 in stage 2.0 (TID 38)
+24/02/04 16:07:48 INFO Executor: Running task 19.0 in stage 2.0 (TID 39)
+24/02/04 16:07:48 INFO Executor: Finished task 1.0 in stage 2.0 (TID 21). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 5.0 in stage 2.0 (TID 25). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 18.0 in stage 2.0 (TID 38). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 14.0 in stage 2.0 (TID 34). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 0.0 in stage 2.0 (TID 20). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 9.0 in stage 2.0 (TID 29). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 7.0 in stage 2.0 (TID 27). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 10.0 in stage 2.0 (TID 30). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 12.0 in stage 2.0 (TID 32). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 16.0 in stage 2.0 (TID 36). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 3.0 in stage 2.0 (TID 23). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 5.0 in stage 2.0 (TID 25) in 71 ms on localhost (1/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 20) in 75 ms on localhost (2/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 18.0 in stage 2.0 (TID 38) in 65 ms on localhost (3/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 14.0 in stage 2.0 (TID 34) in 67 ms on localhost (4/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 9.0 in stage 2.0 (TID 29) in 72 ms on localhost (5/20)
+24/02/04 16:07:48 INFO Executor: Finished task 2.0 in stage 2.0 (TID 22). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 6.0 in stage 2.0 (TID 26). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 19.0 in stage 2.0 (TID 39). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 21) in 76 ms on localhost (6/20)
+24/02/04 16:07:48 INFO Executor: Finished task 13.0 in stage 2.0 (TID 33). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 8.0 in stage 2.0 (TID 28). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 17.0 in stage 2.0 (TID 37). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 11.0 in stage 2.0 (TID 31). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 4.0 in stage 2.0 (TID 24). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO Executor: Finished task 15.0 in stage 2.0 (TID 35). 879 bytes result sent to driver
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 7.0 in stage 2.0 (TID 27) in 74 ms on localhost (7/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 10.0 in stage 2.0 (TID 30) in 76 ms on localhost (8/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 12.0 in stage 2.0 (TID 32) in 76 ms on localhost (9/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 16.0 in stage 2.0 (TID 36) in 74 ms on localhost (10/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 3.0 in stage 2.0 (TID 23) in 81 ms on localhost (11/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 22) in 82 ms on localhost (12/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 6.0 in stage 2.0 (TID 26) in 81 ms on localhost (13/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 13.0 in stage 2.0 (TID 33) in 77 ms on localhost (14/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 19.0 in stage 2.0 (TID 39) in 76 ms on localhost (15/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 8.0 in stage 2.0 (TID 28) in 85 ms on localhost (16/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 17.0 in stage 2.0 (TID 37) in 80 ms on localhost (17/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 11.0 in stage 2.0 (TID 31) in 84 ms on localhost (18/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 4.0 in stage 2.0 (TID 24) in 87 ms on localhost (19/20)
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 15.0 in stage 2.0 (TID 35) in 82 ms on localhost (20/20)
+24/02/04 16:07:48 INFO DAGScheduler: ShuffleMapStage 2 (save at <console>:40) finished in 0.091 s
+24/02/04 16:07:48 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+24/02/04 16:07:48 INFO DAGScheduler: looking for newly runnable stages
+24/02/04 16:07:48 INFO DAGScheduler: running: Set()
+24/02/04 16:07:48 INFO DAGScheduler: waiting: Set(ResultStage 3)
+24/02/04 16:07:48 INFO DAGScheduler: failed: Set()
+24/02/04 16:07:48 INFO DAGScheduler: Missing parents for ResultStage 3: List()
+24/02/04 16:07:48 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[10] at save at <console>:40), which is now runnable
+24/02/04 16:07:48 INFO MemoryStore: ensureFreeSpace(68848) called with curMem=30393, maxMem=278019440
+24/02/04 16:07:48 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 67.2 KB, free 265.0 MB)
+24/02/04 16:07:48 INFO MemoryStore: ensureFreeSpace(24020) called with curMem=99241, maxMem=278019440
+24/02/04 16:07:48 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 23.5 KB, free 265.0 MB)
+24/02/04 16:07:48 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:45043 (size: 23.5 KB, free: 265.1 MB)
+24/02/04 16:07:48 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:874
+24/02/04 16:07:48 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[10] at save at <console>:40)
+24/02/04 16:07:48 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks
+24/02/04 16:07:48 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 40, localhost, PROCESS_LOCAL, 1454 bytes)
+24/02/04 16:07:48 INFO Executor: Running task 0.0 in stage 3.0 (TID 40)
+24/02/04 16:07:48 INFO BlockManagerInfo: Removed broadcast_1_piece0 on localhost:45043 in memory (size: 3.1 KB, free: 265.1 MB)
+24/02/04 16:07:48 INFO BlockManagerInfo: Removed broadcast_0_piece0 on localhost:45043 in memory (size: 3.1 KB, free: 265.1 MB)
+24/02/04 16:07:48 INFO DefaultWriterContainer: Using user defined output committer class parquet.hadoop.ParquetOutputCommitter
+24/02/04 16:07:48 INFO BlockManagerInfo: Removed broadcast_2_piece0 on localhost:45043 in memory (size: 3.5 KB, free: 265.1 MB)
+24/02/04 16:07:48 INFO ShuffleBlockFetcherIterator: Getting 9 non-empty blocks out of 20 blocks
+24/02/04 16:07:48 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 15 ms
+24/02/04 16:07:48 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 61,447,596
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 78B for [id] BINARY: 9 values, 51B raw, 51B comp, 1 pages, encodings: [PLAIN, RLE, BIT_PACKED]
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 179B for [date] BINARY: 9 values, 132B raw, 132B comp, 1 pages, encodings: [PLAIN, RLE, BIT_PACKED]
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 75B for [dt] INT32: 9 values, 42B raw, 42B comp, 1 pages, encodings: [PLAIN, RLE, BIT_PACKED]
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 165B for [ts] INT96: 9 values, 114B raw, 114B comp, 1 pages, encodings: [PLAIN, RLE, BIT_PACKED]
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 75B for [nested, dt] INT32: 9 values, 42B raw, 42B comp, 1 pages, encodings: [PLAIN, RLE, BIT_PACKED]
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 165B for [nested, ts] INT96: 9 values, 114B raw, 114B comp, 1 pages, encodings: [PLAIN, RLE, BIT_PACKED]
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 43B for [ctxSparkVersion] BINARY: 9 values, 8B raw, 8B comp, 1 pages, encodings: [RLE, PLAIN_DICTIONARY, BIT_PACKED], dic { 1 entries, 9B raw, 1B comp}
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 43B for [argSparkVersion] BINARY: 9 values, 8B raw, 8B comp, 1 pages, encodings: [RLE, PLAIN_DICTIONARY, BIT_PACKED], dic { 1 entries, 9B raw, 1B comp}
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 43B for [argHadoopVersion] BINARY: 9 values, 8B raw, 8B comp, 1 pages, encodings: [RLE, PLAIN_DICTIONARY, BIT_PACKED], dic { 1 entries, 9B raw, 1B comp}
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 49B for [argTwitterParquetCommonVersion] BINARY: 9 values, 8B raw, 8B comp, 1 pages, encodings: [RLE, PLAIN_DICTIONARY, BIT_PACKED], dic { 1 entries, 12B raw, 1B comp}
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 49B for [argTwitterParquetFormatVersion] BINARY: 9 values, 8B raw, 8B comp, 1 pages, encodings: [RLE, PLAIN_DICTIONARY, BIT_PACKED], dic { 1 entries, 12B raw, 1B comp}
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 43B for [argTwitterParquetThriftVersion] BINARY: 9 values, 8B raw, 8B comp, 1 pages, encodings: [RLE, PLAIN_DICTIONARY, BIT_PACKED], dic { 1 entries, 9B raw, 1B comp}
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 33B for [argApacheParquetCommonVersion] BINARY: 9 values, 8B raw, 8B comp, 1 pages, encodings: [RLE, PLAIN_DICTIONARY, BIT_PACKED], dic { 1 entries, 4B raw, 1B comp}
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 33B for [argApacheParquetFormatVersion] BINARY: 9 values, 8B raw, 8B comp, 1 pages, encodings: [RLE, PLAIN_DICTIONARY, BIT_PACKED], dic { 1 entries, 4B raw, 1B comp}
+24/02/04 16:07:48 INFO ColumnChunkPageWriteStore: written 33B for [argApacheParquetThriftVersion] BINARY: 9 values, 8B raw, 8B comp, 1 pages, encodings: [RLE, PLAIN_DICTIONARY, BIT_PACKED], dic { 1 entries, 4B raw, 1B comp}
+24/02/04 16:07:48 INFO FileOutputCommitter: Saved output of task 'attempt_202402041607_0003_m_000000_0' to file:/home/gmanche/data/testId=test__1.4.1__2.6.5__8__3/_temporary/0/task_202402041607_0003_m_000000
+24/02/04 16:07:48 INFO SparkHadoopMapRedUtil: attempt_202402041607_0003_m_000000_0: Committed
+24/02/04 16:07:48 INFO Executor: Finished task 0.0 in stage 3.0 (TID 40). 886 bytes result sent to driver
+24/02/04 16:07:48 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 40) in 486 ms on localhost (1/1)
+24/02/04 16:07:48 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+24/02/04 16:07:48 INFO DAGScheduler: ResultStage 3 (save at <console>:40) finished in 0.486 s
+24/02/04 16:07:48 INFO DAGScheduler: Job 2 finished: save at <console>:40, took 0.656036 s
+24/02/04 16:07:48 INFO ParquetFileReader: Initiating action with parallelism: 5
+24/02/04 16:07:48 INFO DefaultWriterContainer: Job job_202402041607_0000 committed.
+24/02/04 16:07:48 INFO ParquetFileReader: Initiating action with parallelism: 5
+24/02/04 16:07:48 INFO ParquetFileReader: Initiating action with parallelism: 5
+
+scala> 
+
+scala> val dfr = sqlContext.read.format("parquet").load(loc)
+24/02/04 16:07:49 INFO ParquetFileReader: Initiating action with parallelism: 5
+dfr: org.apache.spark.sql.DataFrame = [id: string, date: string, dt: date, ts: timestamp, nested: struct<dt:date,ts:timestamp>, ctxSparkVersion: string, argSparkVersion: string, argHadoopVersion: string, argTwitterParquetCommonVersion: string, argTwitterParquetFormatVersion: string, argTwitterParquetThriftVersion: string, argApacheParquetCommonVersion: string, argApacheParquetFormatVersion: string, argApacheParquetThriftVersion: string, testId: string]
+
+scala> 
+
+scala> dfr.printSchema()
+root
+ |-- id: string (nullable = true)
+ |-- date: string (nullable = true)
+ |-- dt: date (nullable = true)
+ |-- ts: timestamp (nullable = true)
+ |-- nested: struct (nullable = true)
+ |    |-- dt: date (nullable = true)
+ |    |-- ts: timestamp (nullable = true)
+ |-- ctxSparkVersion: string (nullable = true)
+ |-- argSparkVersion: string (nullable = true)
+ |-- argHadoopVersion: string (nullable = true)
+ |-- argTwitterParquetCommonVersion: string (nullable = true)
+ |-- argTwitterParquetFormatVersion: string (nullable = true)
+ |-- argTwitterParquetThriftVersion: string (nullable = true)
+ |-- argApacheParquetCommonVersion: string (nullable = true)
+ |-- argApacheParquetFormatVersion: string (nullable = true)
+ |-- argApacheParquetThriftVersion: string (nullable = true)
+ |-- testId: string (nullable = true)
+
+
+scala> dfr.show()
+24/02/04 16:07:49 INFO DataSourceStrategy: Selected 1 partitions out of 1, pruned 0.0% partitions.
+24/02/04 16:07:49 INFO MemoryStore: ensureFreeSpace(213456) called with curMem=92868, maxMem=278019440
+24/02/04 16:07:49 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 208.5 KB, free 264.8 MB)
+24/02/04 16:07:49 INFO MemoryStore: ensureFreeSpace(19750) called with curMem=306324, maxMem=278019440
+24/02/04 16:07:49 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 19.3 KB, free 264.8 MB)
+24/02/04 16:07:49 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on localhost:45043 (size: 19.3 KB, free: 265.1 MB)
+24/02/04 16:07:49 INFO SparkContext: Created broadcast 4 from show at <console>:34
+24/02/04 16:07:49 INFO deprecation: mapred.max.split.size is deprecated. Instead, use mapreduce.input.fileinputformat.split.maxsize
+24/02/04 16:07:49 INFO deprecation: mapred.min.split.size is deprecated. Instead, use mapreduce.input.fileinputformat.split.minsize
+24/02/04 16:07:49 INFO ParquetRelation2$$anonfun$buildScan$1$$anon$1$$anon$2: Using Task Side Metadata Split Strategy
+24/02/04 16:07:49 INFO SparkContext: Starting job: show at <console>:34
+24/02/04 16:07:49 INFO DAGScheduler: Got job 3 (show at <console>:34) with 1 output partitions (allowLocal=false)
+24/02/04 16:07:49 INFO DAGScheduler: Final stage: ResultStage 4(show at <console>:34)
+24/02/04 16:07:49 INFO DAGScheduler: Parents of final stage: List()
+24/02/04 16:07:49 INFO DAGScheduler: Missing parents: List()
+24/02/04 16:07:49 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[16] at show at <console>:34), which has no missing parents
+24/02/04 16:07:49 INFO MemoryStore: ensureFreeSpace(6744) called with curMem=326074, maxMem=278019440
+24/02/04 16:07:49 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 6.6 KB, free 264.8 MB)
+24/02/04 16:07:49 INFO MemoryStore: ensureFreeSpace(3498) called with curMem=332818, maxMem=278019440
+24/02/04 16:07:49 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 3.4 KB, free 264.8 MB)
+24/02/04 16:07:49 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on localhost:45043 (size: 3.4 KB, free: 265.1 MB)
+24/02/04 16:07:49 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:874
+24/02/04 16:07:49 INFO ContextCleaner: Cleaned shuffle 0
+24/02/04 16:07:49 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[16] at show at <console>:34)
+24/02/04 16:07:49 INFO TaskSchedulerImpl: Adding task set 4.0 with 1 tasks
+24/02/04 16:07:49 INFO BlockManagerInfo: Removed broadcast_3_piece0 on localhost:45043 in memory (size: 23.5 KB, free: 265.1 MB)
+24/02/04 16:07:49 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 41, localhost, PROCESS_LOCAL, 1994 bytes)
+24/02/04 16:07:49 INFO Executor: Running task 0.0 in stage 4.0 (TID 41)
+24/02/04 16:07:49 INFO ParquetRelation2$$anonfun$buildScan$1$$anon$1: Input split: ParquetInputSplit{part: file:/home/gmanche/data/testId=test__1.4.1__2.6.5__8__3/part-r-00000-844b97b6-44fb-4412-9c21-f0c2ab02dfc7.parquet start: 0 end: 3971 length: 3971 hosts: [] requestedSchema: message root {
+  optional binary id (UTF8);
+  optional binary date (UTF8);
+  optional int32 dt (DATE);
+  optional int96 ts;
+  optional group nested {
+    optional int32 dt (DATE);
+    optional int96 ts;
+  }
+  optional binary ctxSparkVersion (UTF8);
+  optional binary argSparkVersion (UTF8);
+  optional binary argHadoopVersion (UTF8);
+  optional binary argTwitterParquetCommonVersion (UTF8);
+  optional binary argTwitterParquetFormatVersion (UTF8);
+  optional binary argTwitterParquetThriftVersion (UTF8);
+  optional binary argApacheParquetCommonVersion (UTF8);
+  optional binary argApacheParquetFormatVersion (UTF8);
+  optional binary argApacheParquetThriftVersion (UTF8);
+}
+ readSupportMetadata: {org.apache.spark.sql.parquet.row.requested_schema={"type":"struct","fields":[{"name":"id","type":"string","nullable":true,"metadata":{}},{"name":"date","type":"string","nullable":true,"metadata":{}},{"name":"dt","type":"date","nullable":true,"metadata":{}},{"name":"ts","type":"timestamp","nullable":true,"metadata":{}},{"name":"nested","type":{"type":"struct","fields":[{"name":"dt","type":"date","nullable":true,"metadata":{}},{"name":"ts","type":"timestamp","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"ctxSparkVersion","type":"string","nullable":true,"metadata":{}},{"name":"argSparkVersion","type":"string","nullable":true,"metadata":{}},{"name":"argHadoopVersion","type":"string","nullable":true,"metadata":{}},{"name":"argTwitterParquetCommonVersion","type":"string","nullable":true,"metadata":{}},{"name":"argTwitterParquetFormatVersion","type":"string","nullable":true,"metadata":{}},{"name":"argTwitterParquetThriftVersion","type":"string","nullable":true,"metadata":{}},{"name":"argApacheParquetCommonVersion","type":"string","nullable":true,"metadata":{}},{"name":"argApacheParquetFormatVersion","type":"string","nullable":true,"metadata":{}},{"name":"argApacheParquetThriftVersion","type":"string","nullable":true,"metadata":{}}]}, org.apache.spark.sql.parquet.row.metadata={"type":"struct","fields":[{"name":"id","type":"string","nullable":true,"metadata":{}},{"name":"date","type":"string","nullable":true,"metadata":{}},{"name":"dt","type":"date","nullable":true,"metadata":{}},{"name":"ts","type":"timestamp","nullable":true,"metadata":{}},{"name":"nested","type":{"type":"struct","fields":[{"name":"dt","type":"date","nullable":true,"metadata":{}},{"name":"ts","type":"timestamp","nullable":true,"metadata":{}}]},"nullable":true,"metadata":{}},{"name":"ctxSparkVersion","type":"string","nullable":true,"metadata":{}},{"name":"argSparkVersion","type":"string","nullable":true,"metadata":{}},{"name":"argHadoopVersion","type":"string","nullable":true,"metadata":{}},{"name":"argTwitterParquetCommonVersion","type":"string","nullable":true,"metadata":{}},{"name":"argTwitterParquetFormatVersion","type":"string","nullable":true,"metadata":{}},{"name":"argTwitterParquetThriftVersion","type":"string","nullable":true,"metadata":{}},{"name":"argApacheParquetCommonVersion","type":"string","nullable":true,"metadata":{}},{"name":"argApacheParquetFormatVersion","type":"string","nullable":true,"metadata":{}},{"name":"argApacheParquetThriftVersion","type":"string","nullable":true,"metadata":{}}]}}}
+24/02/04 16:07:49 WARN ParquetRecordReader: Can not initialize counter due to context is not a instance of TaskInputOutputContext, but is org.apache.hadoop.mapreduce.task.TaskAttemptContextImpl
+24/02/04 16:07:49 INFO InternalParquetRecordReader: RecordReader initialized will read a total of 9 records.
+24/02/04 16:07:49 INFO InternalParquetRecordReader: at row 0. reading next block
+24/02/04 16:07:49 INFO InternalParquetRecordReader: block read in memory in 4 ms. row count = 9
+24/02/04 16:07:49 INFO Executor: Finished task 0.0 in stage 4.0 (TID 41). 4429 bytes result sent to driver
+24/02/04 16:07:49 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 41) in 60 ms on localhost (1/1)
+24/02/04 16:07:49 INFO DAGScheduler: ResultStage 4 (show at <console>:34) finished in 0.060 s
+24/02/04 16:07:49 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+24/02/04 16:07:49 INFO DAGScheduler: Job 3 finished: show at <console>:34, took 0.100752 s
++--+----------+----------+--------------------+--------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+--------------------+
+|id|      date|        dt|                  ts|              nested|ctxSparkVersion|argSparkVersion|argHadoopVersion|argTwitterParquetCommonVersion|argTwitterParquetFormatVersion|argTwitterParquetThriftVersion|argApacheParquetCommonVersion|argApacheParquetFormatVersion|argApacheParquetThriftVersion|              testId|
++--+----------+----------+--------------------+--------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+--------------------+
+| 1|0000-01-01|0001-01-01|0003-01-01 00:00:...|[0001-01-01,0003-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |test__1.4.1__2.6....|
+| 2|0050-01-01|0050-01-01|0050-01-01 00:00:...|[0050-01-01,0050-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |test__1.4.1__2.6....|
+| 3|0999-12-31|0999-12-31|0999-12-31 00:00:...|[0999-12-31,0999-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |test__1.4.1__2.6....|
+| 4|1000-01-01|1000-01-01|1000-01-01 00:00:...|[1000-01-01,1000-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |test__1.4.1__2.6....|
+| 5|1592-10-14|1592-10-14|1592-10-14 00:00:...|[1592-10-14,1592-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |test__1.4.1__2.6....|
+| 6|1592-10-15|1592-10-15|1592-10-15 00:00:...|[1592-10-15,1592-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |test__1.4.1__2.6....|
+| 7|1899-12-31|1899-12-31|1899-12-31 00:00:...|[1899-12-31,1899-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |test__1.4.1__2.6....|
+| 8|1900-01-01|1900-01-01|1900-01-01 00:00:...|[1900-01-02,1900-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |test__1.4.1__2.6....|
+| 9|9999-12-31|9999-12-31|9999-12-31 00:00:...|[9999-12-31,9999-...|          1.4.1|          1.4.1|           2.6.5|                      1.6.0rc3|                      2.2.0rc1|                         0.7.0|                             |                             |                             |test__1.4.1__2.6....|
++--+----------+----------+--------------------+--------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+--------------------+
+
+
+scala> Stopping spark context.
+24/02/04 16:07:49 INFO SparkUI: Stopped Spark web UI at http://172.26.95.204:4040
+24/02/04 16:07:49 INFO DAGScheduler: Stopping DAGScheduler
+24/02/04 16:07:49 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+24/02/04 16:07:49 INFO Utils: path = /tmp/spark-66a1c0d8-ec79-4417-bcf3-60042952ec47/blockmgr-9b3ca620-589a-41fd-9197-22c3cd71df14, already present as root for deletion.
+24/02/04 16:07:49 INFO MemoryStore: MemoryStore cleared
+24/02/04 16:07:49 INFO BlockManager: BlockManager stopped
+24/02/04 16:07:49 INFO BlockManagerMaster: BlockManagerMaster stopped
+24/02/04 16:07:49 INFO SparkContext: Successfully stopped SparkContext
+24/02/04 16:07:49 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+24/02/04 16:07:49 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+24/02/04 16:07:49 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+24/02/04 16:07:49 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+24/02/04 16:07:49 INFO Utils: Shutdown hook called
+24/02/04 16:07:49 INFO Utils: Deleting directory /tmp/spark-24464d89-08aa-4ec6-ab43-353e268da44e
+24/02/04 16:07:49 INFO Utils: Deleting directory /tmp/spark-66a1c0d8-ec79-4417-bcf3-60042952ec47
+24/02/04 16:07:49 INFO Utils: Deleting directory /tmp/spark-1117f099-f9c0-48b0-9311-e0ea6ebd8af1

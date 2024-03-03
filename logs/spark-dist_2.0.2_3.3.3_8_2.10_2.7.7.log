@@ -1,0 +1,33 @@
+Previous HEAD position was 1e860747458 Preparing Spark release v1.6.3-rc2
+HEAD is now at 584354eaac0 Preparing Spark release v2.0.2-rc3
++++ dirname /home/gmanche/sources/github/apache/spark/dev/make-distribution.sh
+++ cd /home/gmanche/sources/github/apache/spark/dev/..
+++ pwd
++ SPARK_HOME=/home/gmanche/sources/github/apache/spark
++ DISTDIR=/home/gmanche/sources/github/apache/spark/dist
++ MAKE_TGZ=false
++ NAME=none
++ MVN=/home/gmanche/sources/github/apache/spark/build/mvn
++ ((  10  ))
++ case $1 in
++ NAME=gma-spark
++ shift
++ shift
++ ((  8  ))
++ case $1 in
++ break
++ '[' -z /home/gmanche/tools/jdk8u402-b06 ']'
++ '[' -z /home/gmanche/tools/jdk8u402-b06 ']'
+++ command -v git
++ '[' /usr/bin/git ']'
+++ git rev-parse --short HEAD
++ GITREV=584354eaac0
++ '[' '!' -z 584354eaac0 ']'
++ GITREVSTRING=' (git revision 584354eaac0)'
++ unset GITREV
+++ command -v /home/gmanche/sources/github/apache/spark/build/mvn
++ '[' '!' /home/gmanche/sources/github/apache/spark/build/mvn ']'
+++ /home/gmanche/sources/github/apache/spark/build/mvn help:evaluate -Dexpression=project.version --pip --tgz -Pscala-2.10 -Phadoop-2.7 -Dhadoop.version=2.7.7 -Phive -Phive-thriftserver -Pyarn
+++ grep -v INFO
+++ tail -n 1
++ VERSION=' -X,--debug                             Produce execution debug output'

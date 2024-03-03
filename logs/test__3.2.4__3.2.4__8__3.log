@@ -1,0 +1,213 @@
+24/02/04 16:11:57 WARN Utils: Your hostname, DESKTOP-ENDFM1D resolves to a loopback address: 127.0.1.1; using 172.26.95.204 instead (on interface eth0)
+24/02/04 16:11:57 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Spark context Web UI available at http://172.26.95.204:4040
+Spark context available as 'sc' (master = local[*], app id = local-1707059526412).
+Spark session available as 'spark'.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.2.4
+      /_/
+         
+Using Scala version 2.12.15 (OpenJDK 64-Bit Server VM, Java 1.8.0_402)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> import org.apache.spark.sql._
+import org.apache.spark.sql._
+
+scala> import org.apache.spark.sql.types._
+import org.apache.spark.sql.types._
+
+scala> 
+
+scala> val sparkVersion = sc.version
+sparkVersion: String = 3.2.4
+
+scala> 
+
+scala> val testId = spark.conf.get("spark.args.testId")
+testId: String = test__3.2.4__3.2.4__8__3
+
+scala> 
+
+scala> spark.sql("SET spark.sql.parquet.compression.codec=uncompressed")
+res0: org.apache.spark.sql.DataFrame = [key: string, value: string]
+
+scala> // spark.sql("SET spark.sql.parquet.int96AsTimestamp=true")
+
+scala> // spark.sql("SET spark.sql.parquet.int96TimestampConversion=false")
+
+scala> // spark.sql("SET spark.sql.parquet.outputTimestampType=INT96")
+
+scala> spark.sql("SET spark.sql.parquet.int96RebaseModeInWrite=LEGACY") // LEGACY or CORRECTED or EXCEPTION
+res1: org.apache.spark.sql.DataFrame = [key: string, value: string]
+
+scala> spark.sql("SET spark.sql.parquet.datetimeRebaseModeInWrite=LEGACY") // LEGACY or CORRECTED or EXCEPTION
+res2: org.apache.spark.sql.DataFrame = [key: string, value: string]
+
+scala> spark.sql("SET spark.sql.parquet.int96RebaseModeInRead=LEGACY") // LEGACY or CORRECTED or EXCEPTION
+res3: org.apache.spark.sql.DataFrame = [key: string, value: string]
+
+scala> spark.sql("SET spark.sql.parquet.datetimeRebaseModeInRead=LEGACY") // LEGACY or CORRECTED or EXCEPTION
+res4: org.apache.spark.sql.DataFrame = [key: string, value: string]
+
+scala> 
+
+scala> val data = Seq(
+     |     Row("1", "0000-01-01"),
+     |     Row("2", "0050-01-01"),
+     |     Row("3", "0999-12-31"),
+     |     Row("4", "1000-01-01"),
+     |     Row("5", "1592-10-14"),
+     |     Row("6", "1592-10-15"),
+     |     Row("7", "1899-12-31"),
+     |     Row("8", "1900-01-01"),
+     |     Row("9", "9999-12-31")
+     | )
+data: Seq[org.apache.spark.sql.Row] = List([1,0000-01-01], [2,0050-01-01], [3,0999-12-31], [4,1000-01-01], [5,1592-10-14], [6,1592-10-15], [7,1899-12-31], [8,1900-01-01], [9,9999-12-31])
+
+scala> 
+
+scala> val rdd = sc.parallelize(data)
+rdd: org.apache.spark.rdd.RDD[org.apache.spark.sql.Row] = ParallelCollectionRDD[0] at parallelize at <console>:30
+
+scala> 
+
+scala> val schema = new StructType().add("id", StringType).add("date", StringType)
+schema: org.apache.spark.sql.types.StructType = StructType(StructField(id,StringType,true), StructField(date,StringType,true))
+
+scala> 
+
+scala> var dfw = spark.createDataFrame(rdd, schema)
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string]
+
+scala> dfw.createOrReplaceTempView("dfw")
+
+scala> dfw = spark.sql("SELECT id, date, CAST(date AS DATE) AS dt, CAST(CONCAT(date, ' 00:00:00') AS TIMESTAMP) AS ts, NAMED_STRUCT('dt', CAST(date AS DATE), 'ts', CAST(CONCAT(date, ' 00:00:00') AS TIMESTAMP)) AS nested FROM dfw")
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 3 more fields]
+
+scala> 
+
+scala> dfw = dfw.withColumn("ctxSparkVersion", lit(sparkVersion))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 4 more fields]
+
+scala> dfw = dfw.withColumn("argSparkVersion", lit(spark.conf.get("spark.args.sparkVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 5 more fields]
+
+scala> dfw = dfw.withColumn("argHadoopVersion", lit(spark.conf.get("spark.args.hadoopVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 6 more fields]
+
+scala> dfw = dfw.withColumn("argTwitterParquetCommonVersion", lit(spark.conf.get("spark.args.twitterParquetCommonVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 7 more fields]
+
+scala> dfw = dfw.withColumn("argTwitterParquetFormatVersion", lit(spark.conf.get("spark.args.twitterParquetFormatVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 8 more fields]
+
+scala> dfw = dfw.withColumn("argTwitterParquetThriftVersion", lit(spark.conf.get("spark.args.twitterParquetThriftVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 9 more fields]
+
+scala> dfw = dfw.withColumn("argApacheParquetCommonVersion", lit(spark.conf.get("spark.args.apacheParquetCommonVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 10 more fields]
+
+scala> dfw = dfw.withColumn("argApacheParquetFormatVersion", lit(spark.conf.get("spark.args.apacheParquetFormatVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 11 more fields]
+
+scala> dfw = dfw.withColumn("argApacheParquetThriftVersion", lit(spark.conf.get("spark.args.apacheParquetThriftVersion")))
+dfw: org.apache.spark.sql.DataFrame = [id: string, date: string ... 12 more fields]
+
+scala> 
+
+scala> dfw.printSchema()
+root
+ |-- id: string (nullable = true)
+ |-- date: string (nullable = true)
+ |-- dt: date (nullable = true)
+ |-- ts: timestamp (nullable = true)
+ |-- nested: struct (nullable = false)
+ |    |-- dt: date (nullable = true)
+ |    |-- ts: timestamp (nullable = true)
+ |-- ctxSparkVersion: string (nullable = false)
+ |-- argSparkVersion: string (nullable = false)
+ |-- argHadoopVersion: string (nullable = false)
+ |-- argTwitterParquetCommonVersion: string (nullable = false)
+ |-- argTwitterParquetFormatVersion: string (nullable = false)
+ |-- argTwitterParquetThriftVersion: string (nullable = false)
+ |-- argApacheParquetCommonVersion: string (nullable = false)
+ |-- argApacheParquetFormatVersion: string (nullable = false)
+ |-- argApacheParquetThriftVersion: string (nullable = false)
+
+
+scala> dfw.show(false)
++---+----------+----------+-------------------+---------------------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+
+|id |date      |dt        |ts                 |nested                           |ctxSparkVersion|argSparkVersion|argHadoopVersion|argTwitterParquetCommonVersion|argTwitterParquetFormatVersion|argTwitterParquetThriftVersion|argApacheParquetCommonVersion|argApacheParquetFormatVersion|argApacheParquetThriftVersion|
++---+----------+----------+-------------------+---------------------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+
+|1  |0000-01-01|0000-01-01|0000-01-01 00:00:00|{0000-01-01, 0000-01-01 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|2  |0050-01-01|0050-01-01|0050-01-01 00:00:00|{0050-01-01, 0050-01-01 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|3  |0999-12-31|0999-12-31|0999-12-31 00:00:00|{0999-12-31, 0999-12-31 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|4  |1000-01-01|1000-01-01|1000-01-01 00:00:00|{1000-01-01, 1000-01-01 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|5  |1592-10-14|1592-10-14|1592-10-14 00:00:00|{1592-10-14, 1592-10-14 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|6  |1592-10-15|1592-10-15|1592-10-15 00:00:00|{1592-10-15, 1592-10-15 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|7  |1899-12-31|1899-12-31|1899-12-31 00:00:00|{1899-12-31, 1899-12-31 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|8  |1900-01-01|1900-01-01|1900-01-01 00:00:00|{1900-01-01, 1900-01-01 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|9  |9999-12-31|9999-12-31|9999-12-31 00:00:00|{9999-12-31, 9999-12-31 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
++---+----------+----------+-------------------+---------------------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+
+
+
+scala> 
+
+scala> val loc = s"/home/gmanche/data/testId=${testId}"
+loc: String = /home/gmanche/data/testId=test__3.2.4__3.2.4__8__3
+
+scala> 
+
+scala> dfw.coalesce(1).write.format("parquet").mode("overwrite").save(loc)
+[Stage 3:>                                                          (0 + 1) / 1]                                                                                
+scala> 
+
+scala> val dfr = spark.read.format("parquet").load(loc)
+dfr: org.apache.spark.sql.DataFrame = [id: string, date: string ... 12 more fields]
+
+scala> 
+
+scala> dfr.printSchema()
+root
+ |-- id: string (nullable = true)
+ |-- date: string (nullable = true)
+ |-- dt: date (nullable = true)
+ |-- ts: timestamp (nullable = true)
+ |-- nested: struct (nullable = true)
+ |    |-- dt: date (nullable = true)
+ |    |-- ts: timestamp (nullable = true)
+ |-- ctxSparkVersion: string (nullable = true)
+ |-- argSparkVersion: string (nullable = true)
+ |-- argHadoopVersion: string (nullable = true)
+ |-- argTwitterParquetCommonVersion: string (nullable = true)
+ |-- argTwitterParquetFormatVersion: string (nullable = true)
+ |-- argTwitterParquetThriftVersion: string (nullable = true)
+ |-- argApacheParquetCommonVersion: string (nullable = true)
+ |-- argApacheParquetFormatVersion: string (nullable = true)
+ |-- argApacheParquetThriftVersion: string (nullable = true)
+
+
+scala> dfr.show(false)
++---+----------+----------+-------------------+---------------------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+
+|id |date      |dt        |ts                 |nested                           |ctxSparkVersion|argSparkVersion|argHadoopVersion|argTwitterParquetCommonVersion|argTwitterParquetFormatVersion|argTwitterParquetThriftVersion|argApacheParquetCommonVersion|argApacheParquetFormatVersion|argApacheParquetThriftVersion|
++---+----------+----------+-------------------+---------------------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+
+|1  |0000-01-01|0000-01-01|0000-01-01 00:00:00|{0000-01-01, 0000-01-01 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|2  |0050-01-01|0050-01-01|0050-01-01 00:00:00|{0050-01-01, 0050-01-01 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|3  |0999-12-31|0999-12-31|0999-12-31 00:00:00|{0999-12-31, 0999-12-31 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|4  |1000-01-01|1000-01-01|1000-01-01 00:00:00|{1000-01-01, 1000-01-01 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|5  |1592-10-14|1592-10-14|1592-10-14 00:00:00|{1592-10-14, 1592-10-14 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|6  |1592-10-15|1592-10-15|1592-10-15 00:00:00|{1592-10-15, 1592-10-15 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|7  |1899-12-31|1899-12-31|1899-12-31 00:00:00|{1899-12-31, 1899-12-31 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|8  |1900-01-01|1900-01-01|1900-01-01 00:00:00|{1900-01-01, 1900-01-01 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
+|9  |9999-12-31|9999-12-31|9999-12-31 00:00:00|{9999-12-31, 9999-12-31 00:00:00}|3.2.4          |3.2.4          |3.2.4           |                              |                              |                              |1.12.2                       |2.8.0                        |0.13.0                       |
++---+----------+----------+-------------------+---------------------------------+---------------+---------------+----------------+------------------------------+------------------------------+------------------------------+-----------------------------+-----------------------------+-----------------------------+
+
+
+scala> :quit

@@ -1,0 +1,3 @@
+Previous HEAD position was 3e8391327ba Preparing Spark release v1.3.1-rc3
+HEAD is now at dbaa5c294eb Preparing Spark release v1.4.1-rc4
+./test-spark-parquet.sh: line 101: /home/gmanche/sources/github/apache/spark/dev/make-distribution.sh: No such file or directory
